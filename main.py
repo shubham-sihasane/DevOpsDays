@@ -120,3 +120,8 @@
 # For Loops:  Execute a block of code a fixed number of times.
 # You can iterate over a range, string, sequence etc.
 
+# for i in range(1,11, 2):
+#     print(i, end=" ")
+
+# for i in reversed(range(11  )):
+#     print(i, end=" ")

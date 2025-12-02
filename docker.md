@@ -81,9 +81,17 @@
 
 `docker image rm <image-name>` OR `docker image rmi <image-name>` ⌘ Remove one or more local docker images
 
-
-
   import      Import the contents from a tarball to create a filesystem image
   load        Load an image from a tar archive or STDIN
   save        Save one or more images to a tar archive (streamed to STDOUT by default)
   tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  
+`docker volume create <volume-name>` ⌘ Create a docker volume
+
+`docker volume inspect <volume-name>` ⌘ Display detailed information on one or more volumes
+
+`docker volume ls` ⌘ List volumes
+
+`docker volume rm <volume-name>` ⌘ Remove one or more volumes
+
+`docker volume prune` ⌘ Remove unused local volumes
