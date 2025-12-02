@@ -80,10 +80,43 @@
 # cart_total = price * quantity
 # print(f"Your cart total is ${cart_total}")
 
+# Indexing - Accessing elements of a sequence using indexing operator [] with [start:end:step]
 
+# credit_number = "3525-6856-2436"
+# print(credit_number)
+# print(f"The value at first index is {credit_number[0]}")
+# print(f"The value at last index is {credit_number[-1]}")
+# print(f"The first four items are {credit_number[0:4]}")
+# print(f"The first four items are {credit_number[:4]}")
+# print(f"The first four items are {credit_number[4:-1]}")
+# print(f"The first four items are {credit_number[4:]}")
+# print(f"The last four items are {credit_number[-4:]}")
+# print(f"The last items are {credit_number[:-1]}")
+# print(f"The alternate items are {credit_number[::2]}")
+# print(f"The reverse credit number is {credit_number[::-1]}")
 
+# While Loop = Execute some code while some condition remains true
 
+# name = input("Enter your name: ")
+#
+# while name == "":
+#     name = input("Please enter your name: ")
+# else:
+#     print(f"Hello {name}")
 
+# age = int(input("Enter your age: "))
+#
+# while age < 0:
+#     print("Age can't be negative.")
+#     age = int(input("Enter your age: "))
+# print("Your age is:", age)
 
+# magic = int(input("Enter a number: "))
+# if magic <= 0 or magic >= 100:
+#     print("Your number is out of range.")
+# else:
+#     print("Your are lucky.")
 
+# For Loops:  Execute a block of code a fixed number of times.
+# You can iterate over a range, string, sequence etc.
 
