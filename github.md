@@ -10,9 +10,9 @@
 
 `git config --global --list` ⌘ Configure list of configured values in the system
 
-`git init` OR `git init .` OR `git init <folder-name>` ⌘ Create a git repository
+`git init` OR `git init .` OR `git init <folder-name>` ⌘ Covert current working directory into git repository OR Create a new git repository with folder-name
 
-`git add .` OR `git add <file1>...<fileN>` OR `git add --all` ⌘ Add one or more files to staging area
+ `git add <file1>...<fileN>` OR `git add .` OR `git add --all` ⌘ Add one or more files to staging area
 
 `git status` ⌘ Check the status of git repository
 
@@ -34,6 +34,8 @@
 
 `git diff --staged <filename>` ⌘ Show difference between staging area and local repository
 
+`git diff <commit-ID1> <commit-ID2>` ⌘ Show difference between two commits
+
 `.gitignore` ⌘ Create a file in repository to ignore pattern based file/s from tracking in repository
 
 `git annotate <filename>` ⌘ Shows the author and commit information for each line of a given file
@@ -44,9 +46,7 @@
 
 `git mv <old-location> <new-location>` ⌘ Move files within repository
 
-`git restore <file-name>` ⌘ Restore a file to its last committed state
-
-`git checkout -- <file-name>` ⌘ Revert changes from working directory
+`git restore <file-name>` OR `git checkout -- <file-name>` ⌘ Discard the changes in working directory to last commit
 
 `git restore --staged <file-name>` ⌘ Unstage a file from staging area to working area
 
@@ -60,19 +60,37 @@
 
 `git branch <branch-name>` ⌘ Create a new branch
 
+`git branch -v` ⌘ List of all branch with recent commits
+
+`git branch -r` ⌘ List of all branches including remote branches
+
+`git branch -M <old-name> <new-name>` ⌘ Rename an existing old branch with new branch name
+
 `git checkout <branch-name>` ⌘ Switch a branch
 
 `git checkout -b <branch-name>` ⌘ Create and switch to a new branch
 
 `git checkout <commit-ID>` ⌘ Navigate to the specific commit ID and `git switch -` to go back to HEAD of branch
 
+`git checkout <tag-name>` ⌘ Checkout specific tag from history
+
+`git checkout HEAD~N` ⌘ Checkout specific commit from history
+
 `git switch -c <branch-name>` ⌘ Create a branch after specific commit checkout
 
 `git branch -d <branch-name>` ⌘ Delete a branch
 
-`git branch -D <branch-name>` ⌘ Forceful deletion of a branch as you can not delete branch without merge
+`git branch -D <branch-name>` ⌘ Forceful deletion of a branch as you can not delete branch without merge, you must merge branch before deleting by default
+
+`git push origin -d <branch-name>` ⌘ Delete branch from remote repository
 
 `git branch -a` ⌘ Lists all local and remote branches
+
+`git merge <brach-name>` ⌘ Merge changes from branch-name to current branch
+
+`git branch --merged` ⌘ List branches which are merged
+
+`git branch --no-merged` ⌘ List branches which are not merged
 
 `git remote add alias <URL>` ⌘ Create an alias = 'origin' for remote URL
 
@@ -82,15 +100,19 @@
 
 `git push <alias> <branch-name>` ⌘ Push changes from local branch to remote branch
 
-`git push -f` ⌘ Forcefully push the local changes to remote repository
+`git push -u <alias> <branch-name>` ⌘ Set up an upstream alias for mapping of local and remote branch
 
-`git clone <URL>` ⌘ Create a copy of a remote repository
+`git push` ⌘ Push changes from local current branch to remote branch ex. local main to remote main
+
+`git push -f` ⌘ Forcefully push the local changes to remote repository
 
 `git remote rename <old-name> <new-name>` ⌘ Rename old remote with new remote
 
 `git remote remove <remote-name>` ⌘ Remove the remote alias
 
 `git remote set-url <alias> <URL>` ⌘ Set new alias URL for remote
+
+`git clone <URL>` ⌘ Create a copy of a remote repository
 
 `git show <commit-ID>` ⌘  Inspect various Git objects, such as commits, tags, trees, and blobs
 
@@ -115,6 +137,8 @@
 `git stash` ⌘ Stash the work from staging area to stashing area
 
 `git stash list` ⌘ ⌘ List the stash from the stashing area
+
+`git stash save <stash-name>` ⌘ Save a stash with stash-name
 
 `git stash show <stash-ID>` ⌘ ⌘ Show details about specific stash
 

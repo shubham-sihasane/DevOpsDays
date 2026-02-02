@@ -1,6 +1,116 @@
 
-`ls` ⌘ List 
+* Linux Shells *
 
+- Bourn Shell (Sh)
+- Korn Shell (ksh)
+- Z Shell (zsh)
+- Bourn Again Shell (Bash)
+
+`echo $SHELL` ⌘ Print the shell type
+
+`echo <message>` ⌘ Print a message on the console
+
+`ls` ⌘ List files and folders
+
+`cd <directory>` ⌘ Change the directory
+
+`pwd` ⌘ Print current working directory
+
+`mkdir <directory>` ⌘ Create a directory
+
+`mkdir -p <directory1>/<directory2>/<directory3>` ⌘ Create nested directories
+
+`rm -r <directory>` ⌘ Remove all the contents of the directory
+
+`cp -r <source-path> <destination-path>` ⌘ Copy directory from one source to destination
+
+`touch <filename>` ⌘ Create an empty file
+
+`cat > <filename>` ⌘ Type contents to the file `ctr + d` to terminate
+
+`cat <filename>` ⌘ Display the contents of the file
+
+`cp <file-source-path> <file-destnation-path>` ⌘ Copy a file source to destination path
+
+`mv <source-path-file/directory> <destination-path/directory>` ⌘ Move file or directory from source to destination
+
+`rm <filename>` ⌘ Remove or delete a file
+
+`cd <directory>; mkdir <directory>; pwd` ⌘ Execute multiple commands separated by `;`
+
+`vi <filename>` ⌘ Open a file in VI editor [i = Insert Mode, Esc = Command Mode]
+
+- x = Delete a character
+- dd = Delete a line
+- yy = Copy a line
+- p = Paste a line
+- :wq = command; save, quite
+
+`find <pattern/word>` ⌘ Find word or pattern in opened file in VI editor, `n = next'
+
+`whoami` ⌘ Find which user you are
+
+`id <user>` ⌘ Identify the ID details of the user
+
+`sudo su -` ⌘ Switch as a root user
+
+`su <username>` ⌘ Switch as another user
+
+`ssh user@hostname` ⌘ SSH into server (hostname) as user
+
+`sudo <command>` ⌘ Execute command as root user
+
+`curl <URL> -O` ⌘ Save the result in file else print output on screen
+
+`wget <URL> -O <filename>` ⌘ Save the contents of the file in filename
+
+`cat /etc/*release*` ⌘ Print operating system details on screen
+
+`RPM - Red Hat Package Manager` # Red Hat / CentOS distribution
+
+`rpm -i <package-name>` ⌘ Install a package
+
+`rpm -e <package-name>` ⌘ Uninstall a package
+
+`rpm -q <package-name>` ⌘ Query a package
+
+`YUM =  Yellowdog Updater, Modified` # High level package manager built on top of RPM
+
+`yum install <package-name>` ⌘ Install a package | `/etc/yum.repos.d` Repo information | `yum repolist`
+
+`yum list <package-name>` ⌘ List package
+
+`yum --showduplicates list <package-name>:<version>` ⌘ Show duplicate installed packages 
+
+`yum remove <package-name>` ⌘ Remove a package from the system
+
+`/etc/systemd/system` ⌘ System Services files location
+
+`systemctl start <service-name>` ⌘ Start a service
+
+`systemctl stop <service-name>` ⌘ Stop a service
+
+`systemctl status <service-name>` ⌘ Status a service
+
+`systemctl enable <service-name>` ⌘ Enable a service at system start
+
+`systemctl disable <service-name>` ⌘ Disable a service at system start
+
+`systemctl start <service-name>` ⌘ Start a service
+
+`systemctl daemon-reload` ⌘ Reload a daemon service to take effect
+
+`systemctl cat <>service-name.service` ⌘ Print systemd file
+
+`ip link` ⌘ List and modify interfaces on host
+
+`ip addr` ⌘ IP address assigned to those interfaces
+
+`ip addr add <IP-address> dev eth0` ⌘ Attach IP address to ethernet
+
+`route` ⌘ Display route table
+
+`ip route add <IP-address-of-another-network> via <IP-address-router>` ⌘ Add route to route table
 
 `date` ⌘ Prints system time (UTC)
 
@@ -85,6 +195,12 @@
 `sed "s/<old-text>/<new-text>/" <filename>` ⌘ 
 
 `sed "s/<old-text>/<new-text>/" <filename>`
+
+`useradd <options> <username>` ⌘ Create user in system with options like -u = user ID, -G = secondary user, -g = primary group ID, -d = home directory, -c = comment, -s = shell
+
+`passwd <username>` ⌘ Create a password for the user
+
+``
 
 
 
