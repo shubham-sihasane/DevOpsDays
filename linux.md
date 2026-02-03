@@ -112,6 +112,16 @@
 
 `ip route add <IP-address-of-another-network> via <IP-address-router>` ⌘ Add route to route table
 
+`cat /etc/resolv.conf` ⌘ A hostsfile which is used as a local DNS mapping
+
+`cat /etc/hosts` ⌘ Keeps the IP and name mapping
+
+`cat /etc/nsswitch.conf` ⌘ Switch order for precedence on hosts file and DNS server
+
+`nslookup <IP/hostname>` ⌘ A network utility used to test DNS resolution
+
+`dig <IP/hostname>` ⌘ A network utility used to test DNS resolution as an alternative
+
 `date` ⌘ Prints system time (UTC)
 
 `cal` ⌘ Prints current month calendar
