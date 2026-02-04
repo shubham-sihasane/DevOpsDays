@@ -26,6 +26,10 @@
 
 `git log --online --graph --all` ⌘ Graph of oneline logs
 
+`git log --name-only` ⌘ Display log of commits with author info and commited files
+
+`git log -n N` ⌘ Display last N commits
+
 `git log grep="<pattern>"` ⌘ List logs based on the pattern in commits 
 
 `git diff <filename>` ⌘ Show difference between local directory and staging area
