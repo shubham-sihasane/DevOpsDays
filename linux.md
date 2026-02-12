@@ -14,7 +14,7 @@
 
 `cd <directory>` ⌘ Change the directory
 
-`pwd` ⌘ Print current working directory
+`pwd` ⌘ Print present current working directory
 
 `mkdir <directory>` ⌘ Create a directory
 
@@ -54,11 +54,11 @@
 
 `sudo su -` ⌘ Switch as a root user
 
-`su <username>` ⌘ Switch as another user
+`su <username>` ⌘ Switch as another user, /etc/sudoers
 
 `ssh user@hostname` ⌘ SSH into server (hostname) as user
 
-`sudo <command>` ⌘ Execute command as root user
+`sudo <command>` ⌘ Execute command as root user (Higher Privileges)
 
 `curl <URL> -O` ⌘ Save the result in file else print output on screen
 
@@ -108,7 +108,7 @@
 
 `ip addr add <IP-address> dev eth0` ⌘ Attach IP address to ethernet
 
-`route` ⌘ Display route table
+`route` ⌘ Display kernel IP route table
 
 `ip route add <IP-address-of-another-network> via <IP-address-router>` ⌘ Add route to route table
 
