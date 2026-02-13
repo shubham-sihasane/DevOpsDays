@@ -6,13 +6,20 @@
 - Z Shell (zsh)
 - Bourn Again Shell (Bash)
 
+`<COMMAND> -<OPTION> <ARGUMENTS>`⌘ Standard template for linux commands
+
 `echo $SHELL` ⌘ Print the shell type
 
-`echo <message>` ⌘ Print a message on the console
+`echo "${BASH_VERSION}"` ⌘ Print the bash version | `bash` to start bash shell
 
-`ls` ⌘ List files and folders
+`echo '<message>'` ⌘ Print a message on the console | -n for no line break -e for escape sequence
 
-`cd <directory>` ⌘ Change the directory
+`ls` ⌘ List files and folders | `ls -l` for long listing | `ls -a` for hidden files starting with . | `ls -r` for reverse order of sorting | `ls -t` for sort by modification time, newest first
+
+- Absolute Path = They start with `/`, complete path to file, they work everywhere
+- Relative Path = Are being resolved according to our current working directory
+
+`cd <directory>` ⌘ Change the directory | `cd /` takes you to root directory | `cd ~` OR `cd` takes to home directory | `cd ..` takes to parent directory | `cd ../..` takes you to parent's parent directory 
 
 `pwd` ⌘ Print present current working directory
 
@@ -37,6 +44,8 @@
 `rm <filename>` ⌘ Remove or delete a file
 
 `cd <directory>; mkdir <directory>; pwd` ⌘ Execute multiple commands separated by `;`
+
+`clear` ⌘ Clear the output of all the previous commands from console 
 
 `vi <filename>` ⌘ Open a file in VI editor [i = Insert Mode, Esc = Command Mode]
 
@@ -136,6 +145,8 @@
 
 `man <command>` ⌘ Help for any command
 
+`<command> -h` OR `<command> --help` ⌘ Print the help manual for command
+
 `pwd` ⌘ Print current working directory
 
 `ls` ⌘ List files and folders in directory
@@ -210,7 +221,77 @@
 
 `passwd <username>` ⌘ Create a password for the user
 
-``
+### User Management
+
+In Linux, users can be categorized into three general categories:
+
+- System Accounts
+  - They are responsible for running background tasks on your system
+  - They don't have home directory
+- Regular User
+  - They have access their own home directory and files
+  - They can not perform admin tasks or access other users files and directories without permission
+- Super User (Root)
+  - They have unrestricted access to system
+  - Can do pretty much everything, add/remove software
+  - Can change the configuration of the system
+
+*Elevating Privileges - sudo*
+Temporarily elevate privileges by putting sudo in front of a command to become superuser.
+
+### Package Management
+- A centralized way to manage and install software packages is called package management.
+- Linux system connects with centralized repositories to manage the software including install, remove various versions of same software.
+- Package management is handled differently for different linux distributions.
+
+*Package Management for Debian - Ubuntu*
+-  apt or apt-get are the package managers for managing packages on debian based systems like ubuntu, needs sudo privileges | apt does install additional required dependencies as well whereas apt-get does not
+- `apt update` ⌘ Refreshes the available list of packages, first thing to do on system before any other apt command
+- `apt upgrade` ⌘ Upgrade the system packages, upgrades only existing packages including those package dependencies
+- `apt full-upgrade` OR `apt dist-upgrade` ⌘ Upgrade the full system including installing and removing packages which may cause issues
+- `apt install <package>` ⌘ Install a package 
+- `apt remove <package>` ⌘ Uninstall a package
+- `apt autoremove` ⌘ Removes packages that are no longer needed
+
+*Package Management for RHEL - CentOS*
+- dnf or yum are the package managers for managing packages on RHEL based systems like centos, amazon linux, needs sudo privileges | DNF is the modern successor to YUM, offering significant architectural and performance improvements.
+- `dnf update` OR `dnf upgrade` ⌘ Fetches the latest version of packages and upgrades the system, dnf always keeps the local packages up to date, no need to manually refresh it like ubuntu. | crb-enable
+- `dnf install <package>` ⌘ Install a package | package = epel-release - additional package for installing tools/utilities
+- `dnf remove <package>` ⌘ Remove a package
+- `yum install <package>` ⌘ Install a package
+- `yum remove <package>` ⌘ Remove a package
+
+### File Management in Linux
+
+`touch <filename>` ⌘ Creates one or more empty files (separated by spaces), if it does exist else only timestamp get updated.
+
+`mkdir <directory>` ⌘ Creates one or more empty directories (separated by spaces), if it does exist
+
+`rmdir <directory>` ⌘ Remove an empty directory
+
+`mv <source_path> <target_path>` ⌘ Move an existing file to another location, can also be used to renaming a file
+
+`cp <source_path> <target_path>` ⌘ Copy a file to another location, `-r` for copying directory
+
+`rm <filename>` ⌘ Remove one or more files separated by space, remove a empty or non-empty directory with `-r`
+
+`tree <path>` ⌘ Showcase & display directory structure, `.` for current working directory
+
+`find [path] [options] [expression]` ⌘ Search files based on expression | `-type f` for file type, `-type d` for directory | `-mtime -7` modified in last 7 days | `-size +10M` for files larger than 10 MB | `-empty -delete` for deleting all empty file | combination of options | `man find` for options
+
+`cat <filename>` ⌘ Prints the content of a file
+
+`head -N <filename>` ⌘ Shows top 10 lines by default, `-N` for number of top N lines
+
+`tail -N <filename>` ⌘ Shows bottom 10 lines by default, `-N` for number of bottom N lines
+
+`less <filename>` | Display long file page by page, `f` for one page at a time
+
+`wc <filename>` ⌘ Prints count of words of a file
+
+`wc -lwc <filename>` ⌘ Prints out the number of lines, number of words, number of bytes in file
+
+
 
 
 
