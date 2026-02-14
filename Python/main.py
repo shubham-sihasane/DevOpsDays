@@ -1,0 +1,299 @@
+# A sample python program to display a message on console
+# print("Hello World!\nWelcome to the world of Python programming!")
+
+# Variable = A variable is like a container for storing values of type number, float, string and boolean.
+# A variable is a behaves as if it was the value it contains.
+
+# # Strings
+# first_name = "Shubham"
+# last_name = "Sihasane"
+# fruit = "Apple"
+# email = "shubhamsihasane@example.com"
+# print(first_name + " " + last_name)
+# print(f"Hello {first_name}\nYou love {fruit}")
+# print(f"You email address is {email}")
+#
+# # Numbers
+# age = 25
+# quantity = 3
+# num_of_students = 50
+# print(f"You are {age} years old.")
+# print(f"You are buying {quantity} {fruit}/s")
+# print(f"Your class is having {num_of_students} students.")
+#
+# # Float
+# price = 10.99
+# gpa = 9.5
+# distance = 5.5
+# print(f"The price of {fruit} is {price}")
+# print(f"Your GPA is {gpa}")
+# print(f"You ran a distance of {distance} kilometers.")
+#
+# # Boolean
+# is_student = True
+# print(f"Are you a student? {is_student}")
+# if is_student:
+#     print(f"You are a student.")
+# else:
+#     print(f"You are not a student.")
+#
+# is_online = True
+# if is_online:
+#     print(f"You are online 🍏")
+# else:
+#     print(f"You are offline 🍎")
+
+# Type Casting = The process of converting a type of variable from one type to another.
+# Type casting functions = str(), int(), float(), bool()
+
+# full_name = "shubham sihasane"
+# age = 25
+# gpa = 8.5
+# is_student = True
+#
+# print(f"The type of {full_name} is: {type(full_name)}")
+# print(f"The type of {age} is {type(age)}")
+# print(f"The type of {gpa} is {type(gpa)}")
+# print(f"The type of {is_student} is {type(is_student)}")
+#
+# print(f"Type cast integer {age} to float = {str(age)}")
+# print(f"Type cast float {gpa} to integer = {int(gpa)}")
+# print(f"Type cast boolean {is_student} to string = {float(is_student)}")
+# print(f"Type cast string {full_name} to boolean = {bool(full_name)}")
+
+# input() = A function that prompt the user to enter the data and returns the entered data as string
+
+# name = input("Enter your name: ")
+# age = int(input("Enter your age: "))
+# print(f"Hey, Your name is {name} and you are {age} years old.")
+
+# Are of rectangle
+# length = float(input("Enter the length of the rectangle: "))
+# breadth = float(input("Enter the breadth of the rectangle: "))
+# area = length * breadth
+# print(f"The area of the rectangle is {area}cm²")
+
+# Shopping cart program
+# item = input("What item would you like to buy? ")
+# price = float(input("What is the price of the item? "))
+# quantity = int(input("How many items you want? "))
+#
+# total_price = price * quantity
+#
+# print(f"The total price of the cart is {total_price}")
+
+# num1 = float(input("Enter the first number: "))
+# num2 = float(input("Enter the second number: "))
+#
+# print(f"Addition of {num1} + {num2} = {num1+num2}")
+# print(f"Subtraction of {num1} - {num2} = {num1 - num2}")
+# print(f"Multiplication of {num1} * {num2} = {num1 * num2}")
+# print(f"Division of {num1} / {num2} = {num1 / num2}")
+# print(f"Remainder of {num1} % {num2} = {num1 % num2}")
+# print(f"Integer Division of {num1} // {num2} = {num1 // num2}")
+# print(f"Pow of {num1} ^ {num2} = {num1 ** num2}")
+
+# a = 3.14
+# b = 10
+# c = 25.25
+#
+# print(f"Round of {a} = {round(a)}")
+# print(f"Absolute value of {a} = {abs(a)}")
+# print(f"Power of {a} = {pow(a, 2)}")
+# print(f"Maximum of {a}, {b}, {c} = {max(a, b, c)}")
+# print(f"Minimum of {a}, {b}, {c} = {min(a, b, c)}")
+
+import math
+# x = 9.254
+# print(f"The value of PI is {math.pi}")
+# print(f"The value of e is {math.e}")
+# print(f"The square root of {x} is {math.sqrt(x)}")
+# print(f"The square of {x} is {math.pow(x, 2)}")
+# print(f"The ceil of {x} is {math.ceil(x)}")
+# print(f"The floor of {x} is {math.floor(x)}")
+# print(f"The round of {x} is {round(x, 2)}")
+
+import math
+# Calculate circumference of circle
+# radius = float(input("Enter a radius: "))
+# circumference = 2 * math.pi * radius
+# print(f"The circumference of the circle is {circumference:.2f}")
+
+# Calculate area of circle
+# radius = float(input("Enter radius: "))
+# area = math.pi * radius * radius
+# print(f"The area of the circle is {area:.2f}")
+
+# Calculate the third side of a right-angled triangle
+# side1 = float(input("Enter the length of the first side: "))
+# side2 = float(input("Enter the length of the second side: "))
+# side3 = math.sqrt(pow(side1, 2) + pow(side2, 2))
+# print(f"The length of the third side is {side3:.2f}")
+
+# IF & Else Statement
+# Execute some piece of code only if condition is True, else execute some another piece of code
+
+# age = int(input("Enter your age: "))
+# if age > 100:
+#     print("You should die now.")
+# elif age >= 18:
+#     print("You can vote.")
+# elif age < 0:
+#     print("You haven't been born yet.")
+# else:
+#     print("You can not vote.")
+
+# response = input("Would you like to order food? (y/n) : ")
+# if response == "y":
+#     print("You must become atmanirbhar.")
+# else:
+#     print("Why you living man.")
+
+# name = input("Enter your name: ")
+# if name == "":
+#     print("Please enter your name: ")
+# else:
+#     print(f"Hey, {name}")
+
+# for_sale = True
+# if for_sale:
+#     print("Item is for sale.")
+# else:
+#     print("Item is not for sale.")
+
+# Python Calculator
+# operator = input("Enter an operator:\n1. Addition\n2. Subtraction\n3. Division\n4. Multiplication\nEnter your choice: ")
+# num1 = float(input("Enter a number 1: "))
+# num2 = float(input("Enter a number 2: "))
+#
+# if operator == "1":
+#     result = num1 + num2
+#     print(f"The result of {num1} + {num2} is {result}")
+# elif operator == "2":
+#     result = num1 - num2
+#     print(f"The result of {num1} - {num2} is {result}")
+# elif operator == "3":
+#     result = num1 * num2
+#     print(f"The result of {num1} * {num2} is {result}")
+# elif operator == "4":
+#     result = num1 / num2
+#     print(f"The result of {num1} / {num2} is {result}")
+# else:
+#     print("Invalid operator")
+
+# Temperature conversion program
+# unit = input("Is this temperature is in celsius or fahrenheit? (c/f): ")
+# temp = float(input("Enter temperature: "))
+# if unit == "c" or "C":
+#     fahrenheit = temp * 9 / 5 + 32
+#     print("Fahrenheit: ", fahrenheit)
+# elif unit == "f" or "F":
+#     celsius = (temp - 32) * 5 / 9
+#     print("Celsius: ", celsius)
+# else:
+#     print("Enter a valid unit.")
+
+# Logical Operators: Evaluate multiple conditions (and, or, not)
+# and = Both conditions must be true
+# or = At least one condition must be true
+# not = Inverts a condition (not False = True)
+
+# temp = 40
+# is_raining = False
+# if temp > 35 or temp < 0 or is_raining:
+#     print("The outdoor event is canceled.")
+# else:
+#     print("The outdoor event is on time.")
+
+# temp = 25
+# is_sunny = False
+#
+# if temp >= 25 and is_sunny:
+#     print("It is hot outside.🥵")
+# else:
+#     print("It is cool.🥶")
+
+# status = True
+# if not status:
+#     print("Please stop 🍎.")
+# else:
+#     print("Please go 🍏.")
+
+# Conditional Expression = A one line shortcut for the if else statement (Ternary Operator)
+# Print or assign one of two values based on a condition = X if condition Y
+# num = 10
+# x = 5
+# y = 25
+# print("Positive" if num > 0 else "Negative")
+# print("Even" if num % 2 == 0 else "Odd")
+# result = x if x > y else y
+# print(f"Maximum number is {result}")
+# result = x if x < y else y
+# print(f"Minimum number is {result}")
+
+# name = input("Enter your name: ")
+# phone_no = input("Enter your phone number: ")
+# print(f"The length of {name} is {len(name)}")
+# print(f"The first occurrence of {name.find('b')}")
+# print(f"The last occurrence of {name.rfind('b')}")
+# print(f"The capitalized name is {name.capitalize()}")
+# print(f"The uppercase name is {name.upper()}")
+# print(f"The lowercase name is {name.lower()}")
+# print(f"Is it digit {name.isdigit()}")
+# print(f"Is alphanumeric {name.isalnum()}")
+# print(f"Total count of character is {phone_no.count('7')}")
+# print(f"Replace 7 with 9 = {phone_no.replace('7', '9')}")
+# print(help(str))
+
+# username = input("Enter your username: ")
+# if len(username) > 12:
+#     print("Your username is too long.")
+# elif len(username) < 3:
+#     print("Your username is too short.")
+# elif not username.find(' ') == -1:
+#     print("Your username should not contain spaces.")
+# elif not username.isalnum():
+#     print("Your username should not container numbers.")
+# else:
+#     print("Your username is valid.")
+
+# Indexing - Accessing elements of a sequence using [] (indexing operator, start : end : step)
+
+# credit_number = "1234-5678-9012-3456"
+# print(credit_number)
+# print(credit_number[0])
+# print(credit_number[-1])
+# print(credit_number[5:])
+# print(credit_number[:4])
+# print(credit_number[5:9])
+# print(credit_number[::2])
+# print(credit_number[::-1])
+
+# price1 = 3.1459
+# price2 = -987.65657
+
+# print(f"Price 1 is {price1:.1f}")
+# print(f"Price 2 is {price2:.2f}")
+
+# While loop = Execute some code while some condition remains true
+
+# name = input("Enter your name: ")
+# while name == "":
+#     print("Please enter your name: ")
+#     name = input("Enter your name: ")
+# else:
+#     print("Hello " + name)
+
+# age = int(input("Enter your age: "))
+# while age < 0:
+#     print("Age can't be negative")
+#     age = int(input("Enter your age: "))
+# print(f"You are {age} years old.")
+
+# num = int(input("Enter  a number between 1 to 10: "))
+# while num < 1 or num > 10:
+#     print(f"{num} is not a valid number.")
+#     num = int(input("Enter  a number between 1 to 10: "))
+# print(f"Your lucky number is {num}")
+
+# Python compound interest calculator
