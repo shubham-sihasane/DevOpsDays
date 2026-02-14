@@ -291,16 +291,50 @@ Temporarily elevate privileges by putting sudo in front of a command to become s
 
 `wc -lwc <filename>` ⌘ Prints out the number of lines, number of words, number of bytes in file
 
+`du <file/directory>` ⌘ Calculate the size of all items in this folder, `-s` for summary
 
+### Manage data streams
 
+`>` = Redirection Operator = Redirect the output command into a file by creating it if it does not exist else the file will be overwritten. | `ls > <filename>` redirect output of ls command in filename, except errors if any
 
+`>>` = Redirection Operator = Redirect the output command into a file by creating it if it does not exist else the file will be overwritten. | `echo <"message"> >> <filename>` redirect and append output of echo command in existing filename, except errors if any
 
+`<` = Redirection Operator = Standard input from a file
 
+*Stream Editors*
+- stdin (0 = standard input keyboard)
+- stdout (1 = standard output on screen)
+- stderr (2 = standard error output on screen)
 
+- `<command> > <output-file>` ⌘ Redirect output
+- `<command> 1> <output-file>` ⌘ Redirect output
+- `<command> 2> <error-file>` ⌘ Redirect errors only
+- `<command> > <output-file> 2> <error-file>` ⌘ Redirect combination of output and error in two separate files
+- `<command> 2> /dev/null` ⌘ Discard stderr
+- `<command> 1> <output-file> 2> <output-file>` ⌘ Combine normal putput and error in same file | `<command> <output-file> 2>&1`  
 
+- `cat file.txt 2>&1 > out.txt` ⌘ stderr will show up in terminal
+- `cat file.txt > out.txt 2>&1` ⌘ stderr will be redirected to file
 
+`echo $?` ⌘ Prints the success or error code like 0, 1, 127
 
+*Pipe*
+- A mechanism that passes the output of one command as input to another command which helps to chain multiple commands together and build more complex functionalities.
+- `command | command .. | command`
 
+*tee*
+- In combination with a pipe and the tee command you can create a standard output and write it into a file at the same time.
+- `echo 'Hello World!' | tee -a hello.txt`
 
+*sort*
+- Sort contents in a file or stdin
+  - By default, alphabetical, `sort -r` for reverse, `sort -n` for numerical order, `sort -c` for checking contents in a file are sorted and find unsorted elements, `-u` for unique, `-d` for duplicate,  `sort -k <col-num>` for sorting data by a specific column
+- `cat users.txt | sort -rud`
 
+`grep`
+ - Grep is a tool that can find a pattern in an output or a file
+ - `grep -F 'pattern' <file>` ⌘ -F for disabling the regular expression
+ - `<command> | grep -F 'pattern'`
+ - By default, it uses basic regular expressions
+ - Ex. `ip addr show | grep -F 'inet''`
 
