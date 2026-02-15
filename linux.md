@@ -338,3 +338,72 @@ Temporarily elevate privileges by putting sudo in front of a command to become s
  - By default, it uses basic regular expressions
  - Ex. `ip addr show | grep -F 'inet''`
 
+*Working with strings*
+
+- Replace on a character level using translate
+  - `echo '<message>' | tr '<original>' '<replacement>'`
+- Convert upper and lower case
+  - `echo '<message>' | tr 'a-z' 'A-Z'`
+- Delete characters
+  - `echo '<message>' | tr -d ' '`
+- Reverse a string
+  - `echo '<message>' | rev`
+
+`cut` ⌘ It allows us to process and extract data a file or standard input
+- `<command> | cut -b 1-10` ⌘ Cut by bytes ex 1-10
+- `<command> | cut -c 1-10` ⌘ Cut by characters ec 1-10
+- `<command> | cut -d ' ' -f 2` ⌘ Cut by delimiters
+
+`sed` ⌘ It allows us to easily execute commands on a file or on stdin
+- `sed <command1>; <command2>; ...`
+- s/[pattern]/[replacement]/[flags]:
+- Replace a string with another, `-g` for all occurrence and not just first
+
+Examples:
+- `cat access.log | grep -F '.zip' | wc -l` 
+- `grep -F '.zip' access.log | cut -d ' ' -f 7` # column 7
+
+
+#### Shell
+- A shell is an outer layer of the OS, takes commands from user and translates them into a form that the kernel can understand and display the results of those commands on console to end user.
+- Everything that allows the outer world to access the OS, the GUI is always a shell.
+- Shell only refers to the command line interface (CLI) of an operating system.
+- CLI = A text based interface that allows users to interact with systems by typing commands (CLI, terminal, console)
+- Linux shell allows us to work on devices that don't support GUI and more efficient to use CLI instead of the GUI.
+
+*Environment Variables*
+- Used to store configuration information and settings
+- They influence the shell and program behaviour
+- By convention Env variables are written in uppercase letters
+- `env` lists all the environment variables
+- Ex. `echo "${PWD}"`,  `echo "$PWD"`, `echo "${PATH}"`
+- IMP = `HOME`, `PWD`, `SHELL`, `USER`
+
+
+*Set/Unset Environment Variables*
+- Set environment variable
+  - `export VAR=value`
+- Unset environment variable
+  - unset VAR
+- These are useful for troubleshooting and cleaning up of the environment
+
+*PATH*
+- `PATH` is one of the most important variables in our shell
+- Stores a list of directories
+- Directories searched for executable programs
+- Left to right order
+- Multiple directories separated by colons (":")
+
+`which <command>` ⌘ Prints location of executable program of command
+
+- Filesystem hierarchy standard: Unified standard of where to place files
+- Single user mode: A special way to launch Linux for repairing a broken system
+- `/bin` - Essential binaries that need to be always available
+- `/sbin` - Essential binaries that usually executed as root and need to be always available
+- `/usr/bin` - Non-essential for all users, could be shared with other computers
+- `/usr/sbin` - Non-essential binaries, usually executed as root, could be shared with other computer
+- `/usr/local/bin` - Non-essential binaries, for all users, specific to this host
+- `/usr/local/sbin` - Non-essential binaries, usually executed as root, specific to this host
+
+
+
