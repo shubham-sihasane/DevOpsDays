@@ -103,7 +103,7 @@
 # print(f"Maximum of {a}, {b}, {c} = {max(a, b, c)}")
 # print(f"Minimum of {a}, {b}, {c} = {min(a, b, c)}")
 
-import math
+# import math
 # x = 9.254
 # print(f"The value of PI is {math.pi}")
 # print(f"The value of e is {math.e}")
@@ -113,7 +113,7 @@ import math
 # print(f"The floor of {x} is {math.floor(x)}")
 # print(f"The round of {x} is {round(x, 2)}")
 
-import math
+# import math
 # Calculate circumference of circle
 # radius = float(input("Enter a radius: "))
 # circumference = 2 * math.pi * radius
@@ -297,3 +297,133 @@ import math
 # print(f"Your lucky number is {num}")
 
 # Python compound interest calculator
+# principle = 0
+# roi = 0
+# time = 0
+#
+# while True < 0:
+#     principle = float(input("Enter the principle amount: "))
+#     if principle <= 0:
+#         print("Principle cannot be less than zero.")
+#     else:
+#         break
+#
+# while roi < 0:
+#     roi = float(input("Enter the rate of interest: "))
+#     if roi < 0:
+#         print("Rate of interest cannot be less than zero.")
+#     else:
+#         break
+#
+# while time <= 0:
+#     time = float(input("Enter the time amount: "))
+#     if time <= 0:
+#         print("Time cannot be less than zero.")
+#     else:
+#         break
+#
+# total = principle * pow((1 + roi / 100), time)
+# print(f"Balance after {time} year/s = ${total:.2f}")
+
+# For Loops = Execute a block of code a fixed number of times.
+# You can iterate over a range, string, sequence etc.
+
+# for x in range(1, 11):
+#     print(x, end = ' ')
+# print("End of Loop")
+#
+# for x in reversed(range(1, 11)):
+#     print(x, end = ' ')
+# print("End of Loop")
+#
+# for x in range(0,20,2):
+#     print(x, end = ' ')
+# print("End of Loop")
+#
+# credit_number = '1234-5678-9012-3456-7890'
+# for x in credit_number:
+#     print(x, end = ' ')
+# print("End of Loop")
+#
+# for x in range(0,21):
+#     if x == 13:
+#         print("Skipping...")
+#         continue
+#     else:
+#         print(x, end = ' ')
+# print("End of Loop")
+
+# import time
+# time.sleep(1)
+# print("Time is over.")
+#
+# my_time = int(input("Enter the time in seconds: "))
+# for x in range(0, my_time):
+#     print(x)
+#     time.sleep(3)
+
+# my_time = int(input("Enter the time in seconds: "))
+# for x in range(my_time, 0, -1):
+#     seconds = x % 60
+#     minutes = x // 60
+#     hour = x // 3600
+#     print(f"{hour:02}:{minutes:02}:{seconds:02}")
+#     time.sleep(1)
+
+# Nested Loops = A loop within another loop (outer, inner)
+# for x in range(1,11):
+#     print()
+#     for y in range(1,11):
+#         print(f"{x} x {y} = {x*y}")
+
+# Collection = Single variable used to store multiple values
+# List = [] ordered and changeable. Duplicate OK
+# Set = {} unordered and immutable, No duplicate, but Add/Remove OK
+# Tuple = () ordered and unchangeable. Duplicates OK, Faster
+# Dictionary = {}
+
+## List
+fruits = ['apple', 'banana', 'coconut', 'banana']
+# print(fruits[0])
+# print(fruits[-1])
+# print(fruits[::-1])
+# for fruit in fruits:
+#     print(f"I like {fruit}")
+# print(f"The number of fruits is: {len(fruits)}")
+# print(f"Apple is available = {'apple' in fruits}")
+# fruits.append('pineapple')
+# print(fruits)
+# fruits.remove('apple')
+# fruits.insert(0, 'strawberry')
+# print(fruits)
+# fruits.sort()
+# fruits.reverse()
+# print(fruits)
+# print(fruits.index("banana"))
+# print(f"The counts of banana is {fruits.count("banana")}")
+# fruits.clear()
+# print(dir(fruits))
+# print(help(fruits))
+
+# friends = {'shubham','manoj','prasanna','rashmi','vrushali','vedika','gargi'}
+# print(dir(friends))
+# print(help(friends))
+# print(fruits)
+# print(len(friends))
+# print('shubham' in friends)
+# friends.add('omkar')
+# friends.remove('shubham')
+# friends.pop()
+# friends.clear()
+# print(friends)
+
+# languages = {'english','marathi','hindi','gujarati','tamil'}
+# print(dir(languages))
+# print(help(languages))
+# print(languages)
+# print(len(languages))
+# print('english' in languages)
+# print(languages.add('mallu'))
+# print(languages.remove('mallu'))
+# print(languages)
+

@@ -55,7 +55,7 @@
 - p = Paste a line
 - :wq = command; save, quite
 
-`find <pattern/word>` ⌘ Find word or pattern in opened file in VI editor, `n = next'
+`find <pattern/word>` ⌘ Find word or pattern in opened file in VI editor, `n = next`
 
 `whoami` ⌘ Find which user you are
 
@@ -273,7 +273,7 @@ Temporarily elevate privileges by putting sudo in front of a command to become s
 
 `cp <source_path> <target_path>` ⌘ Copy a file to another location, `-r` for copying directory
 
-`rm <filename>` ⌘ Remove one or more files separated by space, remove a empty or non-empty directory with `-r`
+`rm <filename>` ⌘ Remove one or more files separated by space, remove empty or non-empty directory with `-r`
 
 `tree <path>` ⌘ Showcase & display directory structure, `.` for current working directory
 
@@ -405,5 +405,125 @@ Examples:
 - `/usr/local/bin` - Non-essential binaries, for all users, specific to this host
 - `/usr/local/sbin` - Non-essential binaries, usually executed as root, specific to this host
 
+*Profile Configuration*
+- ~/.bash_profile
+- ~/.bash_login
+- ~/.profile
+- ~/.bashrc
+
+- Bash can start in various startup modes:
+  - Interactive login shell
+  - Interactive non-login shell
+  - Non-interactive non-login shell
+  - Non-interactive login shell
+
+*Alias*
+ - Use as alias to shorten commands
+ - `alias <alias>='cd ~'`
+ - `unalias <alias>` by default, valid till the terminal session
+
+*Set Shell*
+ - Enable a feature `set -[feature]`
+ - Disable a feature `set +[feature]`
 
 
+
+#### File Management
+File - A container for storing, accessing and or managing data with unique name combined with its path provides a unique location for each file in a filesystem
+
+- Size = The amount of data stored in the file
+- Permissions = Who can read, write or execute the file
+- Ownership = Which user and group owns the file
+- Timestamp = When the file was created, modified, accessed
+
+*How data is stored*
+filename -> Inode (stores metadata) -> Data on Disk
+folder -> Inode (stores metadata) -> file/s
+
+Everything in linux is considered as a file.
+- Ordinary file (-)
+- Directories (d)
+- Symbolic Links (l)
+- Character device (c)
+- Block device (b)
+- Named Pipes (p)
+- Sockets (s)
+
+*Symbolic Link*
+A symlink is a special kind of file on Unix systems.
+- It serves as a reference to another file or directory
+- A special way of shortcut to another destination
+
+- We create a special file that contains a reference to the destination path
+- This reference is being resolved on access of the symlink
+- This affects read and write operations
+
+`ls -s <target> <link>` ⌘ Create a link for taget
+
+- `ls -s desktop desk` desk link for desktop
+- `ls -s file.zip file` # file link for file.xip
+
+*Hard Link*
+- a directory entry or reference to an existing inode, technically the first filename of a file is already a hardlink but one file can have multiple hardlinks, can not be created to directories to avoid looping
+Multiple files -> Inode (Stores metadata) -> Data on Disk
+`ls <target> <link>`
+- `cp -al source dest` # Copy the while source folder, and create hrd links for all files
+
+`df -ih` ⌘ Human readable format inode usage
+
+*Buffered vs Unbuffered Input/Output*
+- Unbuffered: Directly handles data between the IO device and the program
+  - Real-time data and control
+- Buffered: 
+  - Utilizes a temporary storage area to hold before it's being received / sent to the IO device
+
+*/proc files* Inspect system 
+- `/proc/cpuinfo` ⌘ Get CPU related info from system
+- `/proc/meminfo` ⌘ Get memory related info from system
+- `/proc/version` ⌘ Kernel information
+- `/proc/uptime` ⌘ System uptime since started
+- `/proc/loadavg` ⌘ Average CPU load on system
+
+`Devices`
+- Everything is a file, everything is a stream of bytes.
+- Devices refers to a physical or virtual entity that can be accessed through a file life interface
+- Devices in unix serve as the interface between the OS system and various hardware or virtual components
+
+- Character Device
+  - We gain unbuffered, direct access to the hardware
+  - Usually, we can access those devices by reading a byte
+- Block Device
+  - We gain buffered access to the hardware
+  - Multiple bytes are bundled into a block
+- Pseudo Device
+  - Those are devices that don't necessarily refer to a physical device
+
+*Filesystem Hierarchy*
+It defines the directory structure and directory contents in unix like operating systems
+It provides a consistent and predictable location for specific types of files and directories
+- Ensures compatibility across different distributions
+- Makes it easier for users, administrators, and developers to locate files
+
+- `/:` ⌘ Root directory
+- `/bin` ⌘ Essential binaries
+- `/usr/bin` ⌘ User specific binaries
+- `/boot` ⌘ Contains files for bootloader
+- `/dev` ⌘ Contains device files that represents hardware and software devices
+- `/etc` ⌘ Contains system-wide config files
+- `media` ⌘ Contains mount points for removable storage media
+- `/mnt` ⌘ Mount points for additional filesystem
+- `/opt` ⌘ Optional software application packages
+- `/proc` ⌘ Virtual filesystem info about processes and kernel
+- `/root` ⌘ Contains personal data for root user
+- `/run` ⌘ Run time data, file here will be removed during boot or will be discarded on shutdown, 'systemd'
+- `/sbin` ⌘ Contains essential system binaries that are generally used by the root user
+- `/src` ⌘ Files for services
+- `/sys` ⌘ Info about devices, drivers, kernel features
+- `/tmp` ⌘ Contains temporary files, usually deleted after reboot
+- `/usr` ⌘ Contains shareable data with multiple computers, read only data, 
+- `/usr/local` ⌘ Contains user data which should be shared between multiple computer
+- `/var` ⌘ Contains variable data files such as logs, databases, websites, this directory contains changes as the system runs
+- `df -h` ⌘ Disk free, -h for human readable format
+
+
+#### User Management
