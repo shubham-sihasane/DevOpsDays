@@ -527,3 +527,94 @@ It provides a consistent and predictable location for specific types of files an
 
 
 #### User Management
+1. Root User
+- Highest privileges
+- It has the user ID `0`
+- There can be only one root user on the system
+2. Regular User
+- Limited privileges
+- Can be temporarily get root access through sudo
+3. System user
+- For specific tasks
+- This allows us to safely run webserver, database etc
+
+Groups
+- All users have a primary groups
+- And can be assigned to zero to unlimited additional groups
+
+Managing Users
+- `/etc/passwd` ⌘ Contains basic info, username, user ID, group ID, user description, home directory, default shell, readable by all users
+- `/etc/shadow` ⌘ Stores encrypted user passwords and password aging info, Also stores additional info such date of last pass change, expiry dates, Readable only by the root users
+- `/etc/group` ⌘ Contains info about the groups, and their members
+
+*useradd*
+- `useradd [options] [username]`
+  - `-m` ⌘ for home directory
+  - `-d` ⌘ set custom home directory
+  - `-s` ⌘ specify default shell
+  - `-g` ⌘ specify primary group instead of using default configuration
+  - `-G` ⌘ Add user to secondary group
+
+*passwd*
+- `passwd [options] [username]`
+  - `-S` ⌘ Display password status
+  - `-d` ⌘ Delete password
+  - `-n` ⌘ Set minimum password age (days)
+  - `-x` ⌘ Set maximum password age (days)
+  - `-l` ⌘ Lock user account
+  - `-u` ⌘ Unlock user account
+
+`sudo -u [user] -g [group] <task/program>` ⌘ Start program as different user Ex. `sudo -u shubham bash`
+
+*/etc/sudoers*
+- `[user] ALL:(ALL:ALL) ALL` (username), (hostname), (Run config - user:group), (command)
+- `NOPASSWD` : To allow sudo without a password (security risk)
+
+*usermod*
+ - With usermod command, we can modify another users details
+ - `usermod [options] username`
+ - `-c` ⌘ Change user description
+ - `-s` ⌘ Change default shell
+ - `-d` ⌘ Change home directory
+ - `-l` ⌘ Change username
+ - `-g` ⌘ Change primary group
+ - `-G` ⌘ Change secondary group
+ - `-aG` ⌘ Add secondary group
+ - Ex `sudo docker -aG <user>` ⌘ Add user in docker group
+
+`cat /etc/shells` ⌘ Lists shells in the system
+- If user wants to change their default shell, it must be on of /etc/shells
+- `chsh -s /bin/bash` ⌘ Change shell to bash
+
+`userdel`
+- We can delete an existing user
+- `userdel [options] [username]`
+- `-r` ⌘ Removes the home directory
+- `-f` ⌘ Also removes home directory, forces the removal of the user, even if the user is still logged in
+- Might also delete a group with same name as this user
+
+* Switch User - su*
+- su stands for switch user - `su [other user]`
+- Provide password and will be logged in as other user
+
+*Best Practices*
+- Prefer groups to manage privileges
+- Useful meaningful group names
+- Assigning users only the necessary permissions and group membership required
+- Avoiding the use of overly permissive access rights
+- Don't give write access to everybody
+- Minimizing the number of users with elevated privileges
+- Keep group memberships up-to-date
+- Regularly review group membership
+
+
+#### Processes and Signals
+- A process is an instance of a program
+- Independent execution unit with its own resources
+  - CPU and Memory resource
+  - Opened files, network connections etc
+- It is managed by kernel
+- Each process has a process ID (PID), a user under which a process runs under, a state
+- All processes are organized in a hierarchy
+
+

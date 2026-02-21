@@ -383,7 +383,7 @@
 # Dictionary = {}
 
 ## List
-fruits = ['apple', 'banana', 'coconut', 'banana']
+# fruits = ['apple', 'banana', 'coconut', 'banana']
 # print(fruits[0])
 # print(fruits[-1])
 # print(fruits[::-1])
@@ -426,4 +426,147 @@ fruits = ['apple', 'banana', 'coconut', 'banana']
 # print(languages.add('mallu'))
 # print(languages.remove('mallu'))
 # print(languages)
+
+# Shopping Cart
+# foods = ['']
+# prices = []
+# total = 0
+#
+# while True:
+#     food =input("Enter food: (q to quit) ")
+#     if food.lower() == "q":
+#         break
+#     else:
+#         price = float(input(f"Enter the price of {food}: "))
+#         foods.append(food)
+#         prices.append(price)
+#
+# print("----- Your Cart -----")
+# for food in foods:
+#     print(food)
+#
+# for price in prices:
+#     total = total + price
+#
+# print(f"Total price is ${total:.2f}")
+
+# fruits = ['apple', 'banana', 'coconut', 'banana']
+# vegetables = ['carrots', 'potatoes', 'celery']
+# meats = ['chicken', 'fish', 'turkey']
+
+# groceries = [fruits, vegetables, meats]
+# print(groceries[1][2])
+# for collection in groceries:
+#     for food in collection:
+#         print(food, end=' ')
+#     print()
+
+# num_pad = (
+#             (1, 2, 3),
+#             (4, 5, 6),
+#             (7, 8, 9),
+#             ('*', 0, '#')
+#         )
+#
+# for row in num_pad:
+#     for col in row:
+#         print(col, end=' ')
+#     print()
+
+# Python Quiz Game
+
+# questions = ("How many elements are in the periodic table? ",
+#              "Which animal lays the largest eggs? ",
+#              "What is the most abundant gas in Earth's atmosphere? ",
+#              "How may bones are there in human body? ",
+#              "Which planet in the solar system is hottest? ")
+# options = (
+#             ('A','B','C','D'),
+#             ('A','B','C','D'),
+#             ('A','B','C','D'),
+#             ('A','B','C','D')
+#         )
+# answers = ('C', 'A', 'D','B')
+# guesses = []
+# question_num = 0
+#
+# for question in questions:
+#     print("--------------------------")
+#     print(question)
+#     for option in options[question_num]:
+#         print(option)
+#     guess = input("Enter your guess: (A, B, C, D) ").upper()
+#     guesses.append(guess)
+#     if guess == answers[question_num]:
+#         print("You guessed the answer!")
+#     else:
+#         print("Sorry, you did not guess the answer!")
+#         print(f"{answers[question_num]} is the correct answer!")
+#     question_num += 1
+
+# Dictionary = A collection of {key:value} pairs, ordered and changeable. No duplicates
+
+# capitals = {
+#     "India": "New Delhi",
+#     "China": "Beijing",
+#     "Russia": "Moscow"
+# }
+#
+# print(dir(capitals))
+# print(help(capitals))
+# print(capitals)
+# print(capitals["India"])
+
+# if capitals.get("India"):
+#     print("It Exists.")
+# else:
+#     print("It does not exist.")
+
+# capitals.update({"Germarny": "Berlin"})
+# print("capitals: ", capitals)
+# capitals.pop("China")
+#
+# print("capitals: ", capitals)
+# capitals.clear()
+# print("capitals: ", capitals)
+
+# keys = capitals.keys()
+# for key in keys:
+#     print(key)
+
+# items = capitals.items()
+# for key, value in items:
+#     print(f"{key}: {value}")
+
+# Concession Stand program
+# menu = {"Pizza": 3.00,
+#         "Burger": 5.00,
+#         "Soda": 3.00,
+#         "Orange": 6.00,
+#         "Lemondade": 4.00,
+#         "Chips": 9.00
+#         }
+#
+# cart = []
+# total = 0
+#
+# print("-------MENU-------")
+# for key, value in menu.items():
+#     print(f"{key:10}: ${value:.2f}")
+# print("------------------")
+#
+# while True:
+#     choice = input("Please enter your choice: q to quit: ")
+#     if choice == "q":
+#         break
+#     elif menu.get(choice) is not None:
+#         cart.append(choice)
+#
+# print("-----YOUR CART------")
+# for choice in cart:
+#     total = total + menu.get(choice)
+#     print(choice, end=" ")
+#
+# print()
+# print(f"Total: {total:.2f}")
 
