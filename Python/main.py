@@ -570,3 +570,80 @@
 # print()
 # print(f"Total: {total:.2f}")
 
+import random
+
+# print(help(random))
+
+# low = 1
+# high = 100
+# options = ('rock', 'paper', 'scissors')
+# cards = ["4", "7", "9", "2", "6", "5" ]
+# number = random.randint(low, high)
+# print(number)
+# number = random.random()
+# print(number)
+# option = random.choice(options)
+# print(option)
+# random.shuffle(cards)
+# print(cards)
+
+# Python number guessing game
+# import random
+# low_num = 1
+# high_num = 100
+# answer = random.randint(low_num, high_num)
+# guesses = 0
+# is_running = True
+# print("Python Number Guessing Game")
+# print(f"Select a number between {low_num} and {high_num}: ")
+# while is_running:
+#     guess = input("Guess a number: ")
+#     if guess.isdigit():
+#         guess = int(guess)
+#         guesses += 1
+#         if guess < low_num or guess > high_num:
+#             print("Your guess is out of the range.")
+#             print(f"Select a number between {low_num} and {high_num}: ")
+#         elif guess < answer:
+#             print("Your guess is too low.")
+#         elif guess > answer:
+#             print("Your guess is too high.")
+#         else:
+#             print("Your guess is correct.")
+#             print(f"You guessed {guesses} times.")
+#             is_running = False
+#     else:
+#         print("Invalid input, please try again.")
+#         print(f"Select a number between {low_num} and {high_num}: ")
+
+# Rock, Paper, Scissors Game
+# import random
+# options = ("rock", "paper", "scissors")
+# running = True
+#
+# while running:
+#     player = None
+#     computer = random.choice(options)
+#
+#     while player not in options:
+#         player = input("Enter your choice: Rock, Paper, Scissors: ")
+#     print(f"Player: {player}")
+#     print(f"Computer: {computer}")
+#
+#     if player == computer:
+#         print("It's a tie!")
+#     elif player == "rock" and computer == "scissors":
+#         print("You win!")
+#     elif player == "paper" and computer == "rock":
+#         print("You win!")
+#     elif player == "scissors" and computer == "paper":
+#         print("You win!")
+#     else:
+#         print("You lose!")
+#
+#     play_again = input("Do you want to play again? (y/n): ")
+#     if not play_again.lower() == "y":
+#         running = False
+#
+# print("Thank you for playing!")
+
