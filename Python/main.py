@@ -647,3 +647,105 @@ import random
 #
 # print("Thank you for playing!")
 
+# Function - A block of reusable code, place() after the function name to invoke it
+
+# def wish(name):
+#     print("Happy Birthday!", name)
+#
+# wish("Shubham")
+# wish("Vrushali")
+# wish("Rashmi")
+
+# def display_invoice(username, amount, due_date):
+#     print(f"Hello {username}")
+#     print(f"Your bill of ${amount:2f} is due: {due_date}")
+#
+# display_invoice("Shubham", 100.10, "01/02/2025")
+
+# Return = statement used to end a function and send a result back to the caller.
+# def add(x, y):
+#     z = x + y
+#     return z
+# def subtract(x, y):
+#     z = x - y
+#     return z
+# def multiply(x, y):
+#     z = x * y
+#     return z
+# def divide(x, y):
+#     z = x / y
+#     return z
+#
+# print(add(5,7))
+# print(subtract(5,7))
+# print(multiply(5,7))
+# print(divide(5,7))
+
+# def create_name(firstname, lastname):
+#     first_name = firstname.capitalize()
+#     last_name = lastname.capitalize()
+#     return f"{first_name} {last_name}"
+#
+# full_name = create_name("shubham", "sihasane")
+# print(f"Your full name is {full_name}")
+
+# Default Arguments = A default value for certain parameters,
+# default is used when that argument is omitted,
+# make your function more flexible, reduces # of arguments
+# 1. Positional, 2. Default 3. Keyboard 4. Arbitrary
+
+# def net_price(list_price, discount=0, tax=0.05):
+#     return list_price * (1 - discount) * (1 + tax)
+# print(f"Your net price is {net_price(50, 0.2, 0.01)}")
+
+# import time
+# def count(start, end):
+#     for num in range(start, end+1):
+#         print(num)
+#         time.sleep(1)
+#     print("Done!")
+# count(0,10)
+
+# def hello(greeting, title, first, last):
+#     print(f"{greeting} {title} {first} {last}")
+#
+# hello(title="Mr.", first="Shubham", last="Sihasane", greeting="Hello")
+
+# print("1", "2", "3", "4", "5", sep="=")
+
+# def get_phone(country, first, last):
+#     return f"{country}+{first}_{last}"
+#
+# phone_num = get_phone(country=91, first="77578", last="96762")
+# print(phone_num)
+
+# *Args = Allows you to pass multiple non-key arguments
+# **kwargs = Allows you to pass multiple keyword arguments
+# * unpacking operator
+
+# def add(*args):
+#     total = 0
+#     for arg in args:
+#         total = total + arg
+#     return total
+#
+# print(f"The sum of numbers is =", add(1,2,3,4,5,6,7,8,9))
+
+# def display_name(*args):
+#     for arg in args:
+#         print(arg, end=" ")
+#
+# display_name("Mr.", "Shubham", "Sihasane")
+
+# def print_address(*args, **kwargs):
+#     for arg in args:
+#         print(arg, end=" ")
+#     print()
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+#
+# print_address("Mr.", "Shubham", "Sihasane", street="Galaxy Road", city="Pune", state="MH", country="India")
+
+# Iterables = An object and collection that can return its elements one at a time,
+# allowing it to be iterated over in a loop
+
