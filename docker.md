@@ -162,11 +162,8 @@
 
 ```Dockerfile
 FROM ubuntu
-RUN apt-get update
-RUN apt-get install pythong
-RUN pip install flask
-RUN pip install flask-mysql
+RUN apt-get update && apt-get install python -y
+RUN pip install flask && flask-mysql
 COPY . /opt/source-code
 ENTRYPOINT FLASK_APP=/opt/source-code/app.py flask run
 ```
-
