@@ -1,0 +1,95 @@
+# workflow:
+#   name: App workflow
+
+# stages:
+#     - build
+#     - test
+#     - deploy
+
+# build-job:
+#     stage: build
+#     script:
+#         - echo "Hello, $GITLAB_USER_LOGIN!"
+
+# test-job1:
+#     stage: test
+#     script:
+#         - echo "Application testing 1 is completed."
+
+# test-job2:
+#     stage: test
+#     script:
+#         - echo "Application testing 2 is completed."
+
+# deploy-job:
+#     stage: deploy
+#     script:
+#         - echo "Application is deployed from $CI_COMMIT_BRANCH branch."
+
+#--------------------------------------------------------------------------------------
+
+# workflow:
+#   name: Docusaurus
+
+# default:
+#   image: node:22-alpine
+
+# stages:
+#   - build
+#   - test
+#   - deploy
+
+# .standard_rules:
+#   rules:
+#     - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+# build-job:
+#   extends:
+#     - .standard_rules
+#   stage: build
+#   script:
+#     - npm ci
+#     - npm run build
+#   artifacts:
+#     untracked: false
+#     when: on_success
+#     access: all
+#     expire_in: 1 days
+#     paths:
+#       - "build/"
+
+# lint-markdown:
+#   extends:
+#     - .standard_rules
+#   stage: test
+#   dependencies: []     # Don't fetch any artifacts
+#   script:
+#     - npm install markdownlint-cli2 --global
+#     - markdownlint-cli2 -v
+#     - markdownlint-cli2 "blog/**/*.md" "docs/**/*.md"
+#   allow_failure: true
+
+# test-html:
+#   extends:
+#     - .standard_rules
+#   stage: test
+#   dependencies:
+#   - build-job
+#   script:
+#     - npm install --save-dev htmlhint
+#     - npx htmlhint --version
+#     - npx htmlhint build/
+
+# pages:
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+#   stage: deploy
+#   image: busybox
+#   dependencies:
+#     - build-job
+#   script:
+#     - mv build/ public/
+#   artifacts:
+#     paths:
+#       - "public/"
