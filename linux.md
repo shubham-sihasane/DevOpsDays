@@ -121,6 +121,8 @@
 
 `ip route add <IP-address-of-another-network> via <IP-address-router>` ⌘ Add route to route table
 
+`nc -zv <IP-Address> <Port>` ⌘ Check if specific port is open at address with netcat
+
 `cat /etc/resolv.conf` ⌘ A hostsfile which is used as a local DNS mapping
 
 `cat /etc/hosts` ⌘ Keeps the IP and name mapping

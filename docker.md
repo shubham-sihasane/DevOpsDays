@@ -154,7 +154,7 @@
 
 `docker run -v <volume-name>:<container-path> <image-name>` ⌘ Create a volume mount
 
-`docker run --mount type=bind,source=/data/mysql,target=<container-path> <image-name>` ⌘ Create container with storage
+`docker run --mount type=bind,source=/data/mysql,target=<container-path>, readonly <image-name>` ⌘ Create container with storage, readonly is optional, read write is by default
 
 *Environment Variables*
 `docker run -d -e <KEY>:<VALUE> <image-name>` ⌘ Create container by passing environment variable
