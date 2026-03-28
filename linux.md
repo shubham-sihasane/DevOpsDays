@@ -57,6 +57,16 @@
 
 `find <pattern/word>` ⌘ Find word or pattern in opened file in VI editor, `n = next`
 
+- `find <path> -type -f -name "app.log"` ⌘ Find file
+- `find <path> -type -d -name "app.log"` ⌘ Find directory
+- `find / -type f -size +50M` ⌘ Find all files with size greater than 50MB
+
+`ss -tulpn` ⌘ Socket statistics, Check all ports opened on the system
+
+`netstat -tuln` ⌘ Network statistics, active connections, ports, PID's, protocol stats,
+
+`ip addr show` OR `ipconfig` ⌘ Show add details around IP
+
 `whoami` ⌘ Find which user you are
 
 `id <user>` ⌘ Identify the ID details of the user
@@ -133,11 +143,35 @@
 
 `dig <IP/hostname>` ⌘ A network utility used to test DNS resolution as an alternative
 
+`mtr <IP/hostname>` OR `traceroute` ⌘ My Traceroute for hostname
+
+`tcpdump -i eth0 port <port> -c N` ⌘ Troubleshooting from source to target for specific port
+
+`nmap <hostname>`
+
 `date` ⌘ Prints system time (UTC)
 
 `cal` ⌘ Prints current month calendar
 
-`uptime` ⌘ System boot time
+`uptime` ⌘ System boot time since started last time
+
+`free -h` ⌘ Check the available free memory, `-h` for human-readable `-m` for MB, `-w` for wide
+
+`df -h` ⌘ Disk free, -h for human-readable format, `-T` for type of file type, `-i` for inode
+
+`top` ⌘ CPU, memory utilization in the system, `htop` for better view for the same
+
+`sar [options] [interval] [count]` ⌘ interval → seconds between samples. count → number of samples, options → specify what to measure (CPU, memory, I/O, etc.).
+
+`<command> &` ⌘ Run a command, process in background
+
+`ps -ef` ⌘ Lists the running process for current user, `-e` for all processes on the system not just logged-in user, `-f` for full format details, `-aux` for all users, cpu, memory, username, including x for processes not attached to terminal
+
+`vmstat [options] [delay [count]]` ⌘ System performance, delay → Time interval (in seconds) between updates.  count → Number of updates to display.  options → Flags to customize output (e.g., -s for summary).
+
+`iostat [options] [interval] [count]` ⌘ iostat (short for I/O statistics) is part of the `sysstat` package. interval → seconds between reports. count → number of reports to generate. options → customize output (e.g., -x for extended stats).
+
+`journalctl -u <app-name-process>` ⌘ Query and display logs collected by systemd’s journal service
 
 `whoami` ⌘ Prints current user logged in
 
@@ -364,7 +398,26 @@ Temporarily elevate privileges by putting sudo in front of a command to become s
 Examples:
 - `cat access.log | grep -F '.zip' | wc -l` 
 - `grep -F '.zip' access.log | cut -d ' ' -f 7` # column 7
+- `cat <log.file> | grep -i -A2 -B2 <keyword>` for 2 lines after and before keyword
 
+`sed [options] <command> <filename>` ⌘ Search and replace text pattern, delete lines or specific text, insert/append new text, transform text using regular expression
+
+- `sed 's/foo/bar/' file.txt` ⌘ Replace first occurrence of "foo" with "bar" per line
+- `sed 's/foo/bar/g' file.txt`	⌘ Replace all occurrences of "foo" with "bar"
+- `sed -i 's/foo/bar/g' file.txt`	⌘ Replace in place (edit file directly)
+- `sed '/error/d' file.txt`	⌘ Delete lines containing "error"
+- `sed -n '5,10p' file.txt`	⌘ Print only lines 5–10
+- `sed '2i\New line here' file.txt`	⌘ Insert a line before line 2
+- `sed 's/[0-9]/#/g' file.txt`	⌘ Replace all digits with #
+
+`awk [pattern] <action> <filename>` ⌘ A text processing tool
+
+- `awk '{print $1}' file.txt`	Print the first column of each line
+- `awk '{print $1,$3}' file.txt`	Print first and third columns
+- `awk '/error/ {print $0}' logfile.txt`	Print lines containing "error"
+- `awk '{sum+=$2} END {print sum}'` data.txt	Sum values in column 2
+- `awk -F, '{print $1,$2}' file.csv`	Use comma as delimiter, print first two fields
+- `cat app.log | awk -F " " '{print $NF}' | sort | uniq -c | sort -rn` ⌘ sort, find unique, sort reverse
 
 #### Shell
 - A shell is an outer layer of the OS, takes commands from user and translates them into a form that the kernel can understand and display the results of those commands on console to end user.
@@ -525,7 +578,6 @@ It provides a consistent and predictable location for specific types of files an
 - `/usr` ⌘ Contains shareable data with multiple computers, read only data, 
 - `/usr/local` ⌘ Contains user data which should be shared between multiple computer
 - `/var` ⌘ Contains variable data files such as logs, databases, websites, this directory contains changes as the system runs
-- `df -h` ⌘ Disk free, -h for human readable format
 
 
 #### User Management
@@ -583,6 +635,8 @@ Managing Users
  - `-G` ⌘ Change secondary group
  - `-aG` ⌘ Add secondary group
  - Ex `sudo docker -aG <user>` ⌘ Add user in docker group
+
+`groupmod -n <group-name <new-group-name>`
 
 `cat /etc/shells` ⌘ Lists shells in the system
 - If user wants to change their default shell, it must be on of /etc/shells
