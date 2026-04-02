@@ -85,6 +85,8 @@
 
 `cat /etc/*release*` ⌘ Print operating system details on screen
 
+`cat /etc/os-release`
+
 `RPM - Red Hat Package Manager` # Red Hat / CentOS distribution
 
 `rpm -i <package-name>` ⌘ Install a package

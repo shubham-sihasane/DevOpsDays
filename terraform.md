@@ -1,12 +1,18 @@
-`terraform version` ⌘ Check the installed version of terraform
+`terraform version` OR `terraform --version` ⌘ Check the installed version of terraform, including providers version after initialization
 
 `aws --version` ⌘ Check the installed aws CLI version
 
 `tarrform init` ⌘ Prepare your working directory for other commands
+
 `terraform validate` ⌘ Check whether the configuration is valid
+
 `terraform plan` ⌘ Show changes required by the current configuration
+
 `terraform apply --auto-approve` ⌘ Create or update infrastructure, auto approval is optional
+
 `terraform destory --auto-approve` ⌘ Destroy previously-created infrastructure, auto approval is optional
+
+`terraform destory --target <resource-fullname>` ⌘ Destroy specific resource
 
 All other commands:
   console       Try Terraform expressions at an interactive command prompt
