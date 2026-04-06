@@ -63,7 +63,9 @@
 
 `ss -tulpn` ⌘ Socket statistics, Check all ports opened on the system
 
-`netstat -tuln` ⌘ Network statistics, active connections, ports, PID's, protocol stats,
+`netstat -tuln` ⌘ Network statistics, active connections, ports, PID's, protocol stats
+
+`netstat -ntlp` ⌘ Ports opened in the system by applications on the system
 
 `ip addr show` OR `ipconfig` ⌘ Show add details around IP
 

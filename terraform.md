@@ -2,7 +2,7 @@
 
 `aws --version` ⌘ Check the installed aws CLI version
 
-`tarrform init` ⌘ Prepare your working directory for other commands
+`tarrform init` ⌘ Prepare your working directory for other commands, `-upgrade` for to upgrade providers (optional)
 
 `terraform validate` ⌘ Check whether the configuration is valid
 
@@ -12,7 +12,7 @@
 
 `terraform destory --auto-approve` ⌘ Destroy previously-created infrastructure, auto approval is optional
 
-`terraform destory --target <resource-fullname>` ⌘ Destroy specific resource
+`terraform destory --target <resource-identifier>` ⌘ Destroy specific resource
 
 All other commands:
   console       Try Terraform expressions at an interactive command prompt
@@ -28,14 +28,13 @@ All other commands:
   output        Show output values from your root module
   providers     Show the providers required for this configuration
   query         Search and list remote infrastructure with Terraform
-  refresh       Update the state to match remote systems
-  show          Show the current state or a saved plan
+`terraform refresh` ⌘ Update the state to match remote systems, Terraform automatically performs refresh while plan and apply
+`terraform show` ⌘ Show the current state or a saved plan
   stacks        Manage HCP Terraform stack operations
   state         Advanced state management
   taint         Mark a resource instance as not fully functional
   test          Execute integration tests for Terraform modules
   untaint       Remove the 'tainted' state from a resource instance
-  version       Show the current Terraform version
   workspace     Workspace management
 
 Global options (use these before the subcommand, if any):
